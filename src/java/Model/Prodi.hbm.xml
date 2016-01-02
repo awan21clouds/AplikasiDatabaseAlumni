@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Agu 13 5:20:16 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Prodi" table="prodi" catalog="lka2">
+        <id name="idProdi" type="java.lang.Integer">
+            <column name="idProdi" />
+            <generator class="identity" />
+        </id>
+        <property name="kodeProdi" type="string">
+            <column name="kodeProdi" length="10" not-null="true" />
+        </property>
+        <property name="nama" type="string">
+            <column name="nama" length="200" not-null="true" />
+        </property>
+        <property name="inisial" type="string">
+            <column name="inisial" length="10" not-null="true" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true" />
+        </property>
+        <set name="peminatans" inverse="true">
+            <key>
+                <column name="idProdi" />
+            </key>
+            <one-to-many class="Model.Peminatan" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Agu 13 5:20:16 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Wirausahaview" table="wirausahaview" catalog="lka2">
+        <composite-id name="id" class="Model.WirausahaviewId">
+            <key-property name="nim" type="string">
+                <column name="nim" length="10" />
+            </key-property>
+            <key-property name="tanggalMulai" type="date">
+                <column name="tanggalMulai" length="10" />
+            </key-property>
+            <key-property name="core" type="java.lang.Integer">
+                <column name="core" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

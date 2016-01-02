@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Agu 13 5:20:16 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Alumniview" table="alumniview" catalog="lka2">
+        <composite-id name="id" class="Model.AlumniviewId">
+            <key-property name="nim" type="string">
+                <column name="nim" length="8" />
+            </key-property>
+            <key-property name="nama" type="string">
+                <column name="nama" length="200" />
+            </key-property>
+            <key-property name="angkatan" type="string">
+                <column name="angkatan" length="4" />
+            </key-property>
+            <key-property name="prodi" type="string">
+                <column name="prodi" length="200" />
+            </key-property>
+            <key-property name="peminatan" type="string">
+                <column name="peminatan" length="200" />
+            </key-property>
+            <key-property name="wisuda" type="date">
+                <column name="wisuda" length="10" />
+            </key-property>
+            <key-property name="periodewisuda" type="string">
+                <column name="periodewisuda" length="50" />
+            </key-property>
+            <key-property name="tahunwisuda" type="java.lang.Integer">
+                <column name="tahunwisuda" />
+            </key-property>
+            <key-property name="tanggalYudisium" type="date">
+                <column name="tanggalYudisium" length="10" />
+            </key-property>
+            <key-property name="ipk" type="java.lang.Double">
+                <column name="ipk" precision="22" scale="0" />
+            </key-property>
+            <key-property name="kontak" type="java.lang.Boolean">
+                <column name="kontak" />
+            </key-property>
+            <key-property name="predikat" type="string">
+                <column name="predikat" length="200" />
+            </key-property>
+            <key-property name="sk" type="string">
+                <column name="sk" length="200" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Agu 13 5:20:16 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Wisuda" table="wisuda" catalog="lka2">
+        <id name="idWisuda" type="java.lang.Integer">
+            <column name="idWisuda" />
+            <generator class="identity" />
+        </id>
+        <property name="periode" type="string">
+            <column name="periode" length="20" not-null="true" />
+        </property>
+        <property name="tanggal" type="date">
+            <column name="tanggal" length="10" not-null="true" />
+        </property>
+        <property name="keterangan" type="string">
+            <column name="keterangan" length="50" not-null="true" />
+        </property>
+        <set name="mahasiswas" inverse="true">
+            <key>
+                <column name="idWisuda" />
+            </key>
+            <one-to-many class="Model.Mahasiswa" />
+        </set>
+    </class>
+</hibernate-mapping>

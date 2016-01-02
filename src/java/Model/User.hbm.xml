@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Agu 13 5:20:16 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.User" table="user" catalog="lka2">
+        <id name="username" type="string">
+            <column name="username" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="level" class="Model.Level" fetch="select" lazy="false">
+            <column name="idLevel" not-null="true" />
+        </many-to-one>
+        <property name="password" type="string">
+            <column name="password" length="200" not-null="true" />
+        </property>
+        <property name="activeStatus" type="java.lang.Boolean">
+            <column name="activeStatus" />
+        </property>
+        <property name="activeSince" type="date">
+            <column name="activeSince" length="10" />
+        </property>
+        <property name="lastLogin" type="date">
+            <column name="lastLogin" length="10" />
+        </property>
+        <set name="mahasiswas" inverse="true">
+            <key>
+                <column name="nim" length="10" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="Model.Mahasiswa" />
+        </set>
+        <set name="pegawais" inverse="true">
+            <key>
+                <column name="idPegawai" length="10" not-null="true" unique="true" />
+            </key>
+            <one-to-many class="Model.Pegawai" />
+        </set>
+    </class>
+</hibernate-mapping>

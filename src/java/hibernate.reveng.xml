@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="lka2"/>
+  <table-filter match-name="statusmahasiswa"/>
+  <table-filter match-name="pesan"/>
+  <table-filter match-name="kerja"/>
+  <table-filter match-name="jeniskontak"/>
+  <table-filter match-name="level"/>
+  <table-filter match-name="peminatan"/>
+  <table-filter match-name="studi"/>
+  <table-filter match-name="prodi"/>
+  <table-filter match-name="wisuda"/>
+  <table-filter match-name="pegawai"/>
+  <table-filter match-name="mahasiswa"/>
+  <table-filter match-name="pengirimanpesan"/>
+  <table-filter match-name="wirausaha"/>
+  <table-filter match-name="user"/>
+  <table-filter match-name="kontak"/>
+  <table-filter match-name="jeniskerja"/>
+  <table-filter match-name="posisikerja"/>
+  <table-filter match-name="kerjaview"/>
+  <table-filter match-name="wirausahaview"/>
+  <table-filter match-name="studiview"/>
+  <table-filter match-name="alumniview"/>
+  <table-filter match-name="kontakview"/>
+  <table-filter match-name="rekapposisialumni"/>
+  <table-filter match-name="teleponview"/>
+</hibernate-reverse-engineering>

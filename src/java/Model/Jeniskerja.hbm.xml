@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Agu 13 5:20:16 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Jeniskerja" table="jeniskerja" catalog="lka2">
+        <id name="idJenisKerja" type="java.lang.Integer">
+            <column name="idJenisKerja" />
+            <generator class="identity" />
+        </id>
+        <property name="jenisKerja" type="string">
+            <column name="jenisKerja" length="100" not-null="true" />
+        </property>
+        <property name="keterangan" type="string">
+            <column name="Keterangan" length="100" not-null="true" />
+        </property>
+        <set name="kerjas" inverse="true">
+            <key>
+                <column name="idJenisKerja" />
+            </key>
+            <one-to-many class="Model.Kerja" />
+        </set>
+    </class>
+</hibernate-mapping>

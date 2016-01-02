@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Agu 13 5:20:16 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Mahasiswa" table="mahasiswa" catalog="lka2">
+        <id name="nim" type="string">
+            <column name="nim" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="peminatan" class="Model.Peminatan" fetch="select" lazy="false">
+            <column name="idPeminatan" />
+        </many-to-one>
+        <many-to-one name="user" class="Model.User" update="false" insert="false" fetch="select" lazy="false">
+            <column name="nim" length="10" not-null="true" unique="true" />
+        </many-to-one>
+        <many-to-one name="statusmahasiswa" class="Model.Statusmahasiswa" fetch="select" lazy="false">
+            <column name="idStatusMahasiswa" />
+        </many-to-one>
+        <many-to-one name="wisuda" class="Model.Wisuda" fetch="select" lazy="false">
+            <column name="idWisuda" />
+        </many-to-one>
+        <property name="nama" type="string">
+            <column name="nama" length="200" not-null="true" />
+        </property>
+        <property name="tanggalYudisium" type="date">
+            <column name="tanggalYudisium" length="10" />
+        </property>
+        <property name="ipk" type="java.lang.Double">
+            <column name="ipk" precision="22" scale="0" />
+        </property>
+        <property name="kontak" type="java.lang.Boolean">
+            <column name="kontak" />
+        </property>
+        <property name="predikat" type="string">
+            <column name="predikat" length="200" />
+        </property>
+        <property name="sk" type="string">
+            <column name="sk" length="200" />
+        </property>
+        <set name="kontaks" inverse="true">
+            <key>
+                <column name="nim" length="8" not-null="true" />
+            </key>
+            <one-to-many class="Model.Kontak" />
+        </set>
+        <set name="wirausahas" inverse="true">
+            <key>
+                <column name="nim" length="10" not-null="true" />
+            </key>
+            <one-to-many class="Model.Wirausaha" />
+        </set>
+        <set name="kerjas" inverse="true">
+            <key>
+                <column name="nim" length="8" not-null="true" />
+            </key>
+            <one-to-many class="Model.Kerja" />
+        </set>
+        <set name="studis" inverse="true">
+            <key>
+                <column name="nim" length="10" not-null="true" />
+            </key>
+            <one-to-many class="Model.Studi" />
+        </set>
+    </class>
+</hibernate-mapping>

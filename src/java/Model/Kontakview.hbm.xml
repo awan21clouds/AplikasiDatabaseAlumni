@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Agu 13 5:20:16 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Kontakview" table="kontakview" catalog="lka2">
+        <composite-id name="id" class="Model.KontakviewId">
+            <key-property name="nim" type="string">
+                <column name="nim" length="8" />
+            </key-property>
+            <key-property name="nama" type="string">
+                <column name="nama" length="200" />
+            </key-property>
+            <key-property name="kontak" type="string">
+                <column name="kontak" length="50" />
+            </key-property>
+            <key-property name="status" type="boolean">
+                <column name="status" />
+            </key-property>
+            <key-property name="idJenisKontak" type="int">
+                <column name="idJenisKontak" />
+            </key-property>
+            <key-property name="idStatusMahasiswa" type="java.lang.Integer">
+                <column name="idStatusMahasiswa" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

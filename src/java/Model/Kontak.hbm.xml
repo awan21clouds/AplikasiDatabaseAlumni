@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 Agu 13 5:20:16 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Model.Kontak" table="kontak" catalog="lka2">
+        <id name="idKontak" type="java.lang.Integer">
+            <column name="idKontak" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="jeniskontak" class="Model.Jeniskontak" fetch="select" lazy="false">
+            <column name="idJenisKontak" not-null="true" />
+        </many-to-one>
+        <many-to-one name="mahasiswa" class="Model.Mahasiswa" fetch="select">
+            <column name="nim" length="8" not-null="true" />
+        </many-to-one>
+        <property name="kontak" type="string">
+            <column name="kontak" length="50" not-null="true" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
